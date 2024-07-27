@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jcGmXZipkGk67MCOFOuLiyQMKH1iB2d5QNHPcKu70MW5pqssJjHbfxODUNwuPwfoFfcG90FszErjNYOgAl1a1Q==",
+  "dgSpecHash": "GWQWYPkBClgLJe75NTh4PKu8JyPiRhmm+HptqW9OCxygZgL2nW9XDFvLsiEpLYR3FiwE8aobCfO8R95Mu3NWCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alicia\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Alicia\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
