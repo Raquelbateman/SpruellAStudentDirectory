@@ -61,12 +61,12 @@ import {
     return (
       <>
    
-        <Box m={32} shadow={"lg"} rounded={"md"}>
+        <Box m={30} shadow={"lg"} rounded={"md"}>
           <Flex justifyContent={"space-between"} px={"5"}>
             <Heading>
               <Skeleton>Student Database</Skeleton>
             </Heading>
-            <Button color="teal.300" leftIcon={<AddIcon />}>
+            <Button color="teal.700" leftIcon={<AddIcon />}>
               {" "}
               <Skeleton>Add Student</Skeleton>
             </Button>
