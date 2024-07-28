@@ -61,12 +61,11 @@ import {
   
     return (
       <>
-        {/* Stuff below will be commented out for our Skeleton */}
-        {/* <ColorModeSwitch /> */}
+   
         <Box m={32} shadow={"lg"} rounded={"md"}>
           <Flex justifyContent={"space-between"} px={"5"}>
             <Heading>
-              <Skeleton>Student Directory</Skeleton>
+              <Skeleton>Student Database</Skeleton>
             </Heading>
             <Button color="teal.300" leftIcon={<AddIcon />}>
               {" "}
