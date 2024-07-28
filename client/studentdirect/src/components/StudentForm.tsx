@@ -31,10 +31,10 @@ import {
     fetchStudent,
     currentData,
   }: StudentFormProps) => {
-    // use toast
+   
     const toast = useToast();
   
-    // lets hardcode some data for our usestates and then add our data after
+
     const [student, setStudent] = useState({
       id: currentData?.id || 0,
       name: currentData?.name || "",
@@ -42,8 +42,7 @@ import {
       phoneNumber: currentData?.phoneNumber || "",
       email: currentData?.email || "",
     });
-  
-    // helper function to save inside the modal
+ 
     const onSave = () => {
       if (currentData?.id) {
         editStudent();
@@ -52,7 +51,7 @@ import {
       }
     };
   
-    // edit function
+ 
     const editStudent = () => {
       axios
         .put(BASE_URL + "/" + currentData?.id, student)
@@ -70,10 +69,10 @@ import {
         .catch((error) => {
           console.log(error);
         });
-      // console.log(student);
+  
     };
   
-    // add student function
+ 
     const addStudent = () => {
       axios
         .post(BASE_URL, student)
@@ -93,12 +92,12 @@ import {
           console.log(error);
         });
   
-      // console.log(student);
+  
     };
   
     return (
       <>
-        {/* <Button onClick={onOpen}>Open Modal</Button> */}
+    
   
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
@@ -145,8 +144,7 @@ import {
               </VStack>
             </ModalBody>
   
-            {/* line below will show the update in real time
-                {JSON.stringify({student})} */}
+       
   
             <ModalFooter>
               <Button colorScheme="red" mr={3} onClick={onClose}>

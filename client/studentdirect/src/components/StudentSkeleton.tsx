@@ -33,12 +33,11 @@ import {
   
   const StudentSkeleton = () => {
     
-    // usestates to hold our data / states
+
     const [data, setData] = useState<Student[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState("");
   
-    // lets create the fetching data function
     const fetchData = () => {
       setIsLoading(true);
       axios

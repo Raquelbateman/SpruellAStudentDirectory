@@ -201,7 +201,7 @@ import {
               </Heading>
             </Center>
           )}
-          {/* When the modal is open */}
+       
           {isOpen && (
             <StudentForm
               isOpen={isOpen}
