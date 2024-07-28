@@ -31,7 +31,7 @@ import {
   import { BASE_URL } from "../constant";
   import ColorModeSwitch from "./ColorModeSwitch";
   import StudentSkeleton from "./StudentSkeleton";
-  import StudentForm from "./Studentform";
+  import StudentForm from "./StudentForm";
 
   export interface Student {
     id: number;
