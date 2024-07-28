@@ -22,7 +22,7 @@ import {
   import axios from "axios";
   import { BASE_URL } from "../constant";
   
-  // lets get our interface
+ 
   interface Student {
     id: number;
     name: string;
@@ -32,8 +32,6 @@ import {
   }
   
   const StudentSkeleton = () => {
-    
-
     const [data, setData] = useState<Student[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState("");
@@ -41,13 +39,13 @@ import {
     const fetchData = () => {
       setIsLoading(true);
       axios
-        .get(BASE_URL)
+        .get(BASE_URL + "/students")
         .then((response) => {
           setData(response.data);
         })
         .catch((error) => {
           console.log(error);
-          setError(error);
+          setError(error.message);
         })
         .finally(() => {
           setIsLoading(false);
@@ -59,80 +57,63 @@ import {
     }, []);
   
     return (
-      <>
-   
-        <Box m={30} shadow={"lg"} rounded={"md"}>
-          <Flex justifyContent={"space-between"} px={"5"}>
-            <Heading>
-              <Skeleton>Student Database</Skeleton>
-            </Heading>
-            <Button color="teal.700" leftIcon={<AddIcon />}>
-              {" "}
-              <Skeleton>Add Student</Skeleton>
-            </Button>
-          </Flex>
-          <TableContainer>
-            <Table variant="striped" colorScheme="teal">
-              <Thead>
-                <Tr>
-                  <Th>
-                    <Skeleton>Id</Skeleton>
-                  </Th>
-                  <Th>
-                    <Skeleton>Name</Skeleton>
-                  </Th>
-                  <Th>
-                    <Skeleton>Address</Skeleton>
-                  </Th>
-                  <Th>
-                    <Skeleton>Phone Number</Skeleton>
-                  </Th>
-                  <Th>
-                    <Skeleton>Email</Skeleton>
-                  </Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {Array.from({ length: 5 }).map((_, index) => (
+      <Box m={8} shadow={"lg"} rounded={"md"} p={5}>
+        <Flex justifyContent={"space-between"} mb={5}>
+          <Heading>
+            {isLoading ? <Skeleton height="20px" width="150px" /> : "Student Database"}
+          </Heading>
+          <Button colorScheme="teal.500" leftIcon={<AddIcon />}>
+            Add Student
+          </Button>
+        </Flex>
+        <TableContainer>
+          <Table variant="striped" colorScheme="teal">
+            <Thead>
+              <Tr>
+                <Th>Id</Th>
+                <Th>Name</Th>
+                <Th>Address</Th>
+                <Th>Phone Number</Th>
+                <Th>Email</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {isLoading ? (
+                Array.from({ length: 5 }).map((_, index) => (
                   <Tr key={index}>
-                    <Td>
-                      <Skeleton>01</Skeleton>
-                    </Td>
+                    <Td><Skeleton height="20px" /></Td>
                     <Td>
                       <HStack>
-                        <SkeletonCircle>ID</SkeletonCircle>
-                        <Text>
-                          <Skeleton>Student Name</Skeleton>
-                        </Text>
+                        <SkeletonCircle size="10" />
+                        <Skeleton height="20px" width="100px" />
                       </HStack>
                     </Td>
-                    
-                    <Td>
-                      <Skeleton>Student Email</Skeleton>
-                    </Td>
-                    <Td>
-                      
-                      <Badge>
-                        <Skeleton>Yes</Skeleton>
-                      </Badge>
-                    </Td>
-                    <Td>
-                      <Skeleton>12345</Skeleton>
-                    </Td>
-                    <Td>
-                      <HStack>
-                        <SkeletonCircle>1</SkeletonCircle>
-                        <SkeletonCircle>1</SkeletonCircle>
-                        
-                      </HStack>
-                    </Td>
+                    <Td><Skeleton height="20px" width="100px" /></Td>
+                    <Td><Skeleton height="20px" width="100px" /></Td>
+                    <Td><Skeleton height="20px" width="150px" /></Td>
                   </Tr>
-                ))}
-              </Tbody>
-            </Table>
-          </TableContainer>
-        </Box>
-      </>
+                ))
+              ) : error ? (
+                <Tr>
+                  <Td colSpan={5}>
+                    <Text color="red.500">{error}</Text>
+                  </Td>
+                </Tr>
+              ) : (
+                data.map((student) => (
+                  <Tr key={student.id}>
+                    <Td>{student.id}</Td>
+                    <Td>{student.name}</Td>
+                    <Td>{student.address}</Td>
+                    <Td>{student.phoneNumber}</Td>
+                    <Td>{student.email}</Td>
+                  </Tr>
+                ))
+              )}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      </Box>
     );
   };
   
