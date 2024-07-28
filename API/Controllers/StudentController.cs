@@ -13,9 +13,9 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class StudentsController : ControllerBase
     {
-        // add this private variable which wont be mutated hence read only and private
+       
         private readonly AppDbContext _context;
-        // now  we crate a contstructor that passes in a parameter
+     
         public StudentsController(AppDbContext context)
         {
             _context = context;
@@ -25,13 +25,13 @@ namespace API.Controllers
         
         public async Task<IEnumerable<Student>> getStudent()
         {
-            // to add some delay so our page appears to be loading we will add a delay
+          
             await Task.Delay(1000);
             var students = await _context.Students.AsNoTracking().ToListAsync();
             return students;
         }
         
-        // now our first post 
+      
         [HttpPost]
 
         public async Task<IActionResult> Create(Student student)
@@ -52,7 +52,7 @@ namespace API.Controllers
         }
 
 
-        // now we will do a Delete from CRUD  wit ha DELETE
+ 
         [HttpDelete("{id:int}")]
 
         public async Task<IActionResult> Delete(int id)
@@ -75,7 +75,7 @@ namespace API.Controllers
             return BadRequest("Unable to delete student");
         }
 
-        // to get a single student we can add a GET
+  
         [HttpGet("{id:int}")]
 
         public async Task<ActionResult<Student>> GetStudent(int id)
@@ -88,7 +88,6 @@ namespace API.Controllers
             return Ok(student);
         }
 
-        // now we will add our Update from CRUD with a PUT
         [HttpPut("{id:int}")]
         
         public async Task<IActionResult> EditStudent(int id,  Student student)
@@ -100,7 +99,7 @@ namespace API.Controllers
             {
                 return BadRequest("Student not found");
             }
-            // if is not empty
+         
             studentFromDb.Name = student.Name;
             studentFromDb.Email = student.Email;
             studentFromDb.Address = student.Address;
