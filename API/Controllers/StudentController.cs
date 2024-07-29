@@ -51,6 +51,18 @@ namespace API.Controllers
             return BadRequest();
         }
 
+  
+        [HttpGet("{id:int}")]
+
+        public async Task<ActionResult<Student>> GetStudent(int id)
+        {
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
+            {
+                return NotFound("Sorry, student not found");
+            }
+            return Ok(student);
+        }
 
  
         [HttpDelete("{id:int}")]
@@ -75,18 +87,6 @@ namespace API.Controllers
             return BadRequest("Unable to delete student");
         }
 
-  
-        [HttpGet("{id:int}")]
-
-        public async Task<ActionResult<Student>> GetStudent(int id)
-        {
-            var student = await _context.Students.FindAsync(id);
-            if (student == null)
-            {
-                return NotFound("Sorry, student not found");
-            }
-            return Ok(student);
-        }
 
         [HttpPut("{id:int}")]
         
