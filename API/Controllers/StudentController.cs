@@ -92,9 +92,9 @@ namespace API.Controllers
         
         public async Task<IActionResult> EditStudent(int id,  Student student)
         {
-            // lets find our student first
+           
             var studentFromDb = await _context.Students.FindAsync(id);
-            // now lots update but first check to see if empty
+
             if(studentFromDb == null)
             {
                 return BadRequest("Student not found");

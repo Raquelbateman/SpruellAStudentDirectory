@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\api\\API.csproj": {}
+    "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\api\\API.csproj": {
+    "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\api\\API.csproj",
+        "projectPath": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Alicia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\api\\obj\\",
+        "outputPath": "C:\\Users\\Alicia\\Academy\\Level 4\\SpruellAStudentDirectory\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alicia\\AppData\\Roaming\\NuGet\\NuGet.Config"
